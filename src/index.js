@@ -14,7 +14,7 @@ if (storageAvailable('localStorage')) {
   }
 }
 
-function controleDeleteIcons(descriptionInputs) {
+const controleDeleteIcons = (descriptionInputs) => {
   descriptionInputs.forEach((desc) => {
     desc.addEventListener('click', (e) => {
       const dotIconList = document.querySelectorAll('.fa-ellipsis-v');
@@ -38,9 +38,9 @@ function controleDeleteIcons(descriptionInputs) {
       trush.classList.add('show');
     });
   });
-}
+};
 
-function displayToDoTasks(tasksContainer) {
+const displayToDoTasks = (tasksContainer) => {
   tasksContainer.innerHTML = '';
   // Lodash, now imported by this script
   todolist.tasks.forEach((task) => {
@@ -79,7 +79,7 @@ function displayToDoTasks(tasksContainer) {
     populateStorage(todolist.tasks);
   }));
   controleDeleteIcons(descriptionInputs);
-}
+};
 
 const tasksContainer = document.querySelector('.tasks');
 const addTaskForm = document.querySelector('.add_task');
